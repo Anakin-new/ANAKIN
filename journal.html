@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" class="notranslate">
+  <head>
+    <meta name="google" content="notranslate" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sovereign OS | Journal</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>THE LAB OF TRUTH</h1>
+      <main>
+        <h2 id="archiveHeader">Past Archives</h2>
+        <div id="journalHistory"></div>
+      </main>
+
+      <!-- Floating Action Button -->
+      <button id="newEntryBtn" class="fab-btn">+</button>
+    </div>
+
+    <!-- Full-Screen Editor Overlay -->
+    <div id="editorOverlay" class="full-screen-editor">
+      <div class="editor-header">
+        <span>NEW SHADOW LOG</span>
+        <button id="closeEditor" class="text-btn">CANCEL</button>
+      </div>
+      <textarea
+        id="journalInput"
+        placeholder="Log the tension. Where was the friction today?"
+      ></textarea>
+      <button id="saveJournal" class="save-btn">ARCHIVE TRUTH</button>
+    </div>
+
+    <nav class="bottom-nav">
+      <a href="index.html">[ HOME ]</a>
+      <a href="habits.html">[ HABITS ]</a>
+      <a href="journal.html" class="active">[ JOURNAL ]</a>
+      <a href="constitution.html">[ LAWS ]</a>
+      <a href="cosmic.html">[ COSMIC ]</a>
+    </nav>
+    <script src="js/journal.js"></script>
+  </body>
+</html>

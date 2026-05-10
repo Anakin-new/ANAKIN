@@ -1,0 +1,52 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en" class="notranslate">
+  <head>
+    <meta name="google" content="notranslate" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anakin OS | Command Center</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#0a0a0a" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="home-header">
+        <h1>ANAKIN_OS</h1>
+        <div id="datetime" class="datetime-display"></div>
+      </header>
+
+      <main class="dashboard">
+        <div class="streak-display">
+          <span id="homeStreak">0</span>
+          <span class="streak-label">DAYS OF INTEGRITY</span>
+        </div>
+
+        <!-- NEW: Recovery Counter -->
+        <div
+          class="streak-display recovery-display"
+          style="margin-top: 20px; border-color: var(--accent)"
+        >
+          <span id="recoveryStreak" style="font-size: 2rem">0</span>
+          <span class="streak-label">DAYS RECOVERED</span>
+        </div>
+
+        <div class="quote-block">
+          <p id="nietzscheQuote">"Loading perspective..."</p>
+          <span id="quoteAuthor" class="author">- Friedrich Nietzsche</span>
+        </div>
+      </main>
+    </div>
+
+    <nav class="bottom-nav">
+      <a href="index.html" class="active">[ HOME ]</a>
+      <a href="habits.html">[ HABITS ]</a>
+      <a href="journal.html">[ JOURNAL ]</a>
+      <a href="constitution.html">[ LAWS ]</a>
+      <a href="cosmic.html">[ COSMIC ]</a>
+    </nav>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

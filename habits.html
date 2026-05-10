@@ -1,0 +1,104 @@
+<!-- habits.html -->
+<!doctype html>
+<html lang="en" class="notranslate">
+  <head>
+    <meta name="google" content="notranslate" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sovereign OS | Habits</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>DAILY DISCIPLINES</h1>
+
+      <!-- RECOVERY / CRISIS ZONE -->
+      <section
+        class="crisis-zone"
+        style="
+          margin-bottom: 30px;
+          border: 1px solid var(--danger);
+          padding: 15px;
+        "
+      >
+        <h3
+          style="
+            color: var(--danger);
+            margin-top: 0;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+          "
+        >
+          RECOVERY STATUS
+        </h3>
+        <button
+          id="relapsedBtn"
+          class="danger"
+          style="width: 100%; padding: 15px; font-weight: bold"
+        >
+          I RELAPSED (RESET NOFAP)
+        </button>
+      </section>
+
+      <!-- ADD NEW HABIT SECTION -->
+      <section class="add-habit-section">
+        <input
+          type="text"
+          id="newHabitName"
+          placeholder="New Discipline Name..."
+        />
+        <button id="addHabitBtn" style="margin-top: 10px; width: 100%">
+          Forge New Habit
+        </button>
+      </section>
+
+      <!-- DYNAMIC HABITS LIST -->
+      <main id="habitsList" style="margin-top: 30px">
+        <!-- Habits will be injected here via js/habits.js -->
+      </main>
+
+      <!-- MASTER RESET -->
+      <button
+        id="breakStreak"
+        class="danger"
+        style="margin-top: 40px; opacity: 0.7"
+      >
+        I Broke My Word (Reset All Data)
+      </button>
+    </div>
+
+    <!-- CALENDAR MODAL -->
+    <div id="calendarModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2
+          id="modalHabitName"
+          style="
+            text-transform: uppercase;
+            font-size: 1rem;
+            margin-bottom: 10px;
+          "
+        >
+          Habit Tracking
+        </h2>
+        <p
+          style="color: var(--text-dim); font-size: 0.7rem; margin-bottom: 20px"
+        >
+          Monthly Consistency View
+        </p>
+        <div id="calendarGrid" class="calendar-grid"></div>
+      </div>
+    </div>
+
+    <!-- PWA NAVIGATION -->
+    <nav class="bottom-nav">
+      <a href="index.html">[ HOME ]</a>
+      <a href="habits.html" class="active">[ HABITS ]</a>
+      <a href="journal.html">[ JOURNAL ]</a>
+      <a href="constitution.html">[ LAWS ]</a>
+      <a href="cosmic.html">[ COSMIC ]</a>
+    </nav>
+
+    <script src="js/habits.js"></script>
+  </body>
+</html>

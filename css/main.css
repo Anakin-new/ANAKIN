@@ -1,0 +1,390 @@
+:root {
+  --bg: #050505;
+  --surface: #111111;
+  --border: #333333;
+  --text: #e0e0e0;
+  --text-dim: #666666;
+  --accent: #d32f2f;
+  --nav-bg: #000000;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* Disable the blue highlight box on mobile taps */
+* {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+/* Disable text selection/copying globally */
+/* We keep it enabled for textareas/inputs so you can still write and edit */
+body {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and 11 */
+  user-select: none; /* Standard syntax */
+}
+
+/* Re-enable selection for the Journal and inputs so you can actually work */
+textarea,
+input,
+.entry-log p {
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* Prevent image dragging (makes it feel more like a native app) */
+img {
+  -webkit-user-drag: none;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Courier New", Courier, monospace;
+  line-height: 1.6;
+  padding-bottom: 70px; /* Space for bottom nav */
+}
+
+.container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Headers */
+h1 {
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+h2 {
+  font-size: 1.2rem;
+  color: var(--text-dim);
+  margin-bottom: 15px;
+  border-left: 3px solid var(--accent);
+  padding-left: 10px;
+}
+
+/* Dashboard Elements */
+.datetime-display {
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
+.streak-display {
+  text-align: center;
+  margin: 40px 0;
+}
+#homeStreak {
+  font-size: 5rem;
+  font-weight: bold;
+  color: var(--text);
+  display: block;
+  line-height: 1;
+}
+.streak-label {
+  color: var(--accent);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+/* Quote Block */
+.quote-block {
+  background: var(--surface);
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--text-dim);
+  margin-top: 30px;
+}
+.quote-block p {
+  font-style: italic;
+  font-size: 0.95rem;
+}
+.quote-block .author {
+  display: block;
+  margin-top: 10px;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+/* Navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: var(--nav-bg);
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0;
+  z-index: 1000;
+}
+.bottom-nav a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.75rem;
+  transition: color 0.2s;
+}
+.bottom-nav a.active,
+.bottom-nav a:hover {
+  color: var(--text);
+  font-weight: bold;
+}
+
+/* Forms & Inputs */
+textarea {
+  width: 100%;
+  height: 150px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 15px;
+  font-family: inherit;
+  resize: none;
+  margin-bottom: 15px;
+}
+textarea:focus {
+  outline: none;
+  border-color: var(--text-dim);
+}
+
+button {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--text);
+  color: var(--text);
+  padding: 15px;
+  font-family: inherit;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.2s;
+}
+button:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+button.danger {
+  border-color: var(--accent);
+  color: var(--accent);
+  margin-top: 30px;
+}
+button.danger:hover {
+  background: var(--accent);
+  color: var(--text);
+}
+
+/* Layouts */
+.habit-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.habit-item input[type="checkbox"] {
+  margin-right: 15px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+}
+.editable-area {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 20px;
+  min-height: 200px;
+  margin-bottom: 20px;
+  outline: none;
+}
+.entry-log {
+  border-bottom: 1px solid var(--border);
+  padding: 15px 0;
+}
+.entry-date {
+  color: var(--accent);
+  font-size: 0.8rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Cosmic specific */
+#cosmicImageContainer {
+  width: 100%;
+  height: 300px;
+  background: #000;
+  margin-bottom: 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.modal-content {
+  background-color: var(--surface);
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid var(--border);
+  width: 90%;
+  max-width: 400px;
+}
+.close-modal {
+  color: var(--text-dim);
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Calendar Grid */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-top: 20px;
+}
+.cal-day {
+  aspect-ratio: 1;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+.cal-day.completed {
+  background-color: var(--accent);
+  color: var(--text);
+  border: none;
+}
+
+/* Add Habit Styles */
+.add-habit-section input {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 12px;
+  font-family: inherit;
+}
+.habit-label-group {
+  flex-grow: 1;
+  cursor: pointer;
+}
+.habit-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Keeps label and delete button apart */
+}
+
+.delete-habit-btn {
+  width: auto; /* Overrides the global 100% width button style */
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  font-size: 1.2rem;
+  padding: 0 10px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.delete-habit-btn:hover {
+  color: var(--accent);
+  background: transparent; /* Overrides the hover effect from main.css */
+}
+/* Floating Action Button */
+.fab-btn {
+  position: fixed;
+  bottom: 90px; /* Above the bottom nav */
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--text);
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Full-Screen Editor */
+/* Update the Full-Screen Editor container */
+.full-screen-editor {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; /* Standard fallback */
+  height: 100dvh; /* Dynamic viewport height to account for mobile browser bars */
+  background: var(--bg);
+  z-index: 2000;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box; /* Ensures padding doesn't add to width */
+}
+
+/* Ensure the header stays at the top */
+.editor-header {
+  flex-shrink: 0; /* Prevents the header from squishing */
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* The Textarea: This is the key change */
+#journalInput {
+  flex-grow: 1; /* Takes up all available middle space */
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  resize: none;
+  outline: none;
+  margin-bottom: 10px;
+  overflow-y: auto; /* Allows scrolling inside the textarea */
+}
+
+/* Ensure the button stays at the bottom */
+.save-btn {
+  flex-shrink: 0; /* Prevents the button from squishing */
+  height: 55px;
+  background: var(--text);
+  color: var(--bg);
+  font-weight: bold;
+  width: 100%;
+  border: none;
+  text-transform: uppercase;
+}
+.recovery-display {
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px; /* Ensures the container doesn't jump as numbers change */
+}
